@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MONOMYTH Motion Pictures | Your Story Is Disappearing — Film It Now</title>
-    <meta name="description" content="In a world drowning in AI content, your real story is the most valuable thing you'll ever create. MONOMYTH films cinematic 5-minute documentaries. $500 flat.">
+    <meta name="description" content="Your real story, filmed on cinema cameras, in your own words. MONOMYTH Motion Pictures creates cinematic 5-minute personal documentaries. $500 flat.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         /* ============================================
@@ -21,11 +19,11 @@
         }
 
         :root {
-            --black: #000000;
-            --near-black: #0A0A0A;
-            --dark: #111111;
-            --dark-gray: #1A1A1A;
-            --mid-gray: #2A2A2A;
+            --black: #0D0D0D;
+            --near-black: #141414;
+            --dark: #1C1C1C;
+            --dark-gray: #252525;
+            --mid-gray: #353535;
             --text-gray: #888888;
             --text-light: #CCCCCC;
             --white: #FFFFFF;
@@ -43,6 +41,7 @@
 
         body {
             background: var(--black);
+            background-image: radial-gradient(ellipse at 50% 40%, rgba(20, 40, 80, 0.15) 0%, transparent 60%);
             color: var(--white);
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             font-size: 16px;
@@ -277,10 +276,86 @@
             display: inline-block;
         }
 
+        .hero-split {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+            max-width: 1400px;
+            padding: 0 48px;
+            text-align: left;
+        }
+
+        .hero-split-left {
+            flex: 2;
+            min-width: 0;
+        }
+
+        .hero-split-right {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .hero-split-right .hero-sub {
+            text-align: left;
+            margin-bottom: 16px;
+            font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+        }
+
+        .hero-split-right .hero-price {
+            text-align: left;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            margin-bottom: 24px;
+        }
+
+        .hero-split-right .hero-price div {
+            font-size: 0.55em !important;
+        }
+
+        .hero-split-right .hero-cta-group {
+            justify-content: flex-start;
+        }
+
+        .hero-split-right .hero-cta-group .btn {
+            padding: 12px 28px;
+            font-size: 0.7rem;
+        }
+
+        @media (max-width: 960px) {
+            .hero-split {
+                flex-direction: column;
+                text-align: center;
+                padding: 0 16px;
+            }
+
+            .hero-split-left {
+                width: 100%;
+            }
+
+            .hero-video-tabs {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .hero-video-tab {
+                padding: 8px 12px;
+                font-size: 0.65rem;
+            }
+
+            .hero-split-right .hero-sub,
+            .hero-split-right .hero-price {
+                text-align: center;
+            }
+
+            .hero-split-right .hero-cta-group {
+                justify-content: center;
+            }
+        }
+
         .hero-video {
             width: 100%;
             max-width: 960px;
-            margin-bottom: 32px;
+            margin-bottom: 0;
         }
 
         .hero-video-embed {
@@ -299,6 +374,57 @@
             width: 100%;
             height: 100%;
             border: 0;
+        }
+
+        .hero-video-thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--dark);
+        }
+
+        .hero-video-thumb::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            background: var(--red);
+            border-radius: 50%;
+            box-shadow: 0 2px 12px rgba(255, 10, 10, 0.4);
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .hero-video-thumb::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-42%, -50%);
+            z-index: 1;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent var(--white);
+        }
+
+        .hero-video-thumb:hover::after {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 4px 20px rgba(255, 10, 10, 0.6);
+        }
+
+        .hero-video {
+            position: relative;
+            z-index: 10001;
+            isolation: isolate;
         }
 
         .hero-video-tabs {
@@ -1405,7 +1531,7 @@
     <nav class="nav" id="nav">
         <a href="#" class="nav-logo">
             <span class="rec-dot"></span>
-            MONOMYTH
+            MONOMYTH MOTION PICTURES
         </a>
         <div style="display:flex; align-items:center; gap:24px;">
             <a href="#monomyth" style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--text-gray); text-decoration:none; transition:color 0.2s; display:none;" class="nav-link-work" id="navWork">Our Method</a>
@@ -1418,7 +1544,6 @@
          ========================================== -->
     <section class="hero" id="hero">
         <div class="hero-tag">
-            <span class="rec"></span>
             <span>Now Booking For Calgary, Alberta</span>
         </div>
 
@@ -1426,43 +1551,57 @@
             Your Life Story Deserves<br>To Be A <span class="accent">Film.</span>
         </h1>
 
-        <div class="hero-video">
-            <div class="hero-video-embed">
-                <iframe
-                    id="heroVideo"
-                    src="https://www.youtube-nocookie.com/embed/RLwo8clXyZM?rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=0&playsinline=1&color=white&cc_load_policy=0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    referrerpolicy="strict-origin-when-cross-origin"
-                    loading="lazy"
-                    title="Monomyth Motion Pictures">
-                </iframe>
+        <div class="hero-split">
+            <div class="hero-split-left">
+                <div class="hero-video">
+                    <div class="hero-video-embed" id="heroVideoEmbed">
+                        <div class="hero-video-thumb" id="heroVideoThumb"
+                            style="background-image:url('https://img.youtube.com/vi/RLwo8clXyZM/maxresdefault.jpg');"
+                            onclick="playHeroVideo()"
+                            data-video="RLwo8clXyZM">
+                        </div>
+                    </div>
+                    <div class="hero-video-tabs">
+                        <button class="hero-video-tab active" data-video="RLwo8clXyZM" onclick="switchHeroVideo(this)">Kaleb Brunning</button>
+                        <button class="hero-video-tab" data-video="gxeU_tq7jH8" onclick="switchHeroVideo(this)">Peter Herbig</button>
+                        <button class="hero-video-tab" data-video="MJoULg_WjQE" onclick="switchHeroVideo(this)">TICK (Short Film) BTS</button>
+                    </div>
+                </div>
             </div>
-            <div class="hero-video-tabs">
-                <button class="hero-video-tab active" data-video="RLwo8clXyZM" onclick="switchHeroVideo(this)">Kaleb Brunning</button>
-                <button class="hero-video-tab" data-video="gxeU_tq7jH8" onclick="switchHeroVideo(this)">Peter Herbig</button>
+
+            <div class="hero-split-right">
+                <div style="font-family:'Bebas Neue',sans-serif; font-size:clamp(1.2rem,2vw,1.6rem); letter-spacing:0.05em; color:var(--white); margin-bottom:10px;">Everyone Has A Story To Tell.</div>
+                <p class="hero-sub" style="margin-bottom:8px;">
+                    AI is flooding the world with synthetic faces, synthetic voices, synthetic stories.
+                </p>
+                <p class="hero-sub">
+                    Your <strong style="color:var(--white);">real</strong> story &mdash; filmed on cinema cameras, and in your own words &mdash; is one of the most valuable things you can give your family, and maybe even humanity.
+                </p>
+
+                <div class="hero-price" style="margin-bottom:4px;">
+                    <span class="dollar">$</span>500<span style="font-size:0.4em; color:var(--text-gray);"> flat</span>
+                    <span style="font-size:0.35em; color:var(--text-gray); margin-left:8px;">|</span>
+                    <span style="font-size:0.35em; color:var(--text-gray); margin-left:8px; text-decoration:line-through;">$2,500</span>
+                </div>
+
+                <div style="font-family:'JetBrains Mono',monospace; color:var(--red); font-size:0.7rem; letter-spacing:0.1em; margin-bottom:12px;">
+                    &#9888; LIMITED TIME OFFER THROUGH FEBRUARY
+                </div>
+
+                <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--text-gray); letter-spacing:0.05em; line-height:1.6; margin-bottom:6px;">
+                    <span style="color:var(--text-light);">Split-Payment</span><br>
+                    $250 to book | $250 on delivery.
+                </div>
+                <div style="font-size:0.8rem; color:var(--text-gray); line-height:1.5; margin-bottom:20px;">
+                    We limit projects to ensure every story gets the time it deserves.
+                </div>
+
+                <div class="hero-cta-group">
+                    <a href="#booking" class="btn btn-primary">Film My Story</a>
+                    <a href="#monomyth" class="btn btn-outline">How It Works</a>
+                </div>
+
             </div>
-        </div>
-
-        <p class="hero-sub">
-            AI is flooding the world with synthetic faces, synthetic voices, synthetic stories.
-            Your <strong style="color:var(--white);">real</strong> story &mdash; filmed on cinema cameras, in your own words &mdash; is the most valuable thing you'll ever create.
-        </p>
-
-        <div class="hero-price">
-            <span class="dollar">$</span>500<span style="font-size:0.4em; color:var(--text-gray);"> flat</span>
-            <div style="font-family:'JetBrains Mono',monospace; font-size:0.55em; color:var(--text-gray); letter-spacing:0.1em; margin-top:8px; max-width:500px; line-height:1.6;">
-                <div style="color:var(--red); margin-bottom:4px;">&#9888; ONLY 3 SPOTS PER MONTH</div>
-                50/50 split &mdash; $250 to book, $250 on delivery. We limit projects to ensure every story gets the time it deserves.
-            </div>
-        </div>
-
-        <div class="hero-cta-group">
-            <a href="#booking" class="btn btn-primary">Film My Story</a>
-            <a href="#monomyth" class="btn btn-outline">How It Works</a>
-        </div>
-
-        <div style="margin-top:32px; font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--text-gray); letter-spacing:0.1em; ">
-            &darr; Your great-grandchildren are waiting.
         </div>
 
     </section>
@@ -1474,43 +1613,43 @@
         <div class="problem-inner">
             <div class="section-label">Why Now</div>
             <h2 class="display">
-                In 50 Years, Will They<br>Know Who You <span style="color:var(--red);">Were</span>?
+                Everyone Has A Story<br>Worth <span style="color:var(--red);">Telling</span>.
             </h2>
 
             <p>
-                Right now, AI is generating <strong>billions of fake faces, fake voices, fake stories</strong>.
-                Last year alone, 15 billion synthetic images were created &mdash; more than the entire history of photography.
-                The internet is drowning in algorithmic content. And in the middle of this flood,
-                <strong>real human stories are being washed away.</strong>
+                Right now, something is happening. <strong>Founders, artists, parents, craftsmen</strong> &mdash;
+                people from every walk of life are choosing to step up and share their real stories.
+                Not polished highlight reels. Not AI-generated content. <strong>Real stories, told in their own words,
+                filmed where they actually live and work.</strong>
             </p>
 
             <p>
-                Your grandchildren won't remember the sound of your laugh. Your great-grandchildren won't know
-                what you cared about, what you survived, what you learned. They'll have a few old photos,
-                maybe a name, maybe a date. But they won't have <strong>you</strong>.
+                The world rewards people who show up authentically. When you share your story, doors open &mdash;
+                for your business, your family, your community. People connect with people, not brands.
+                And the people who choose to be <strong>seen</strong> are the ones who change things.
             </p>
 
             <div style="margin-top:28px; padding:24px; border-left:3px solid var(--red); background:rgba(255,10,10,0.03);">
                 <p style="margin-bottom:0; font-style:italic;">
-                    Think about your grandmother. <strong>What would you give to watch a 5-minute documentary about her life</strong>
-                    &mdash; filmed when she was your age, in her own home, telling her own story? To hear her voice.
-                    See her face. Understand what shaped her. You'd give anything for that film, wouldn't you?
+                    Think about your grandmother. <strong>Imagine watching a 5-minute documentary about her life</strong>
+                    &mdash; filmed when she was your age, in her own home, telling her own story. Hearing her voice.
+                    Seeing her face. Understanding what shaped her. <strong>That film would be one of the most precious things you own.</strong>
                 </p>
                 <p style="margin-bottom:0; margin-top:16px;">
-                    <strong>That's what you're creating for your descendants.</strong> Not a photo. Not a text file.
-                    A real cinematic documentary that proves you existed. That shows who you were.
-                    That lets them <em>know</em> you, even decades after you're gone.
+                    <strong>That's the gift you're creating.</strong> Not just for your descendants &mdash; for yourself, too.
+                    A real cinematic documentary that captures who you are right now. Your voice. Your world. Your story.
+                    The kind of film that becomes more valuable with every year that passes.
                 </p>
             </div>
 
             <div style="margin-top:32px; padding-top:28px; border-top:1px solid var(--dark-gray);">
-                <span style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--red); letter-spacing:0.15em; text-transform:uppercase;">Your Counter-Move</span>
+                <span style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--red); letter-spacing:0.15em; text-transform:uppercase;">Join The Movement</span>
                 <p style="margin-top:12px;">
-                    While the world fills up with AI-generated ghosts, you create something <strong>undeniably real</strong>.
-                    A 5-minute cinematic documentary &mdash; shot on cinema cameras, in your home, in your own words &mdash;
-                    that captures exactly who you are right now. Not a corporate video. Not a polished ad.
-                    <strong>A real story about a real person.</strong> The kind of film your grandchildren will treasure.
-                    The kind of proof that you existed, that you mattered, that you had a voice.
+                    More people than ever are choosing to tell their real stories &mdash; craftsmen documenting their craft,
+                    founders sharing why they started, parents preserving what matters most.
+                    A 5-minute cinematic documentary &mdash; shot on cinema cameras, in your world, in your own words &mdash;
+                    is the most honest, powerful way to share who you are.
+                    <strong>Your story matters. Not someday. Right now.</strong>
                 </p>
             </div>
         </div>
@@ -1564,7 +1703,7 @@
 
             <!-- Hero's Journey Circle Diagram -->
             <div class="journey-container">
-                <svg class="journey-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <svg class="journey-svg" viewBox="-30 0 660 600" xmlns="http://www.w3.org/2000/svg">
                     <!-- Background circle -->
                     <circle cx="300" cy="300" r="240" fill="none" stroke="#2A2A2A" stroke-width="2" />
 
@@ -1572,8 +1711,8 @@
                     <line x1="50" y1="300" x2="550" y2="300" stroke="#2A2A2A" stroke-width="1" stroke-dasharray="8,6" />
 
                     <!-- Zone labels -->
-                    <text x="300" y="80" text-anchor="middle" fill="#888888" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" text-transform="uppercase">THE KNOWN WORLD</text>
-                    <text x="300" y="540" text-anchor="middle" fill="#888888" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3">THE UNKNOWN WORLD</text>
+                    <text x="300" y="95" text-anchor="middle" fill="#888888" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3" text-transform="uppercase">THE KNOWN WORLD</text>
+                    <text x="300" y="505" text-anchor="middle" fill="#888888" font-family="JetBrains Mono, monospace" font-size="10" letter-spacing="3">THE UNKNOWN WORLD</text>
 
                     <!-- Animated journey path -->
                     <circle cx="300" cy="300" r="240" fill="none" stroke="#FF0A0A" stroke-width="3"
@@ -1592,8 +1731,8 @@
 
                     <!-- 3. Crossing the Threshold (right, at midline) -->
                     <circle cx="540" cy="300" r="6" fill="#FF0A0A" style="opacity:0; animation: dotAppear 0.3s ease forwards 1.6s;" />
-                    <text x="540" y="270" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">CROSSING THE</text>
-                    <text x="540" y="286" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">THRESHOLD</text>
+                    <text x="555" y="290" text-anchor="start" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">CROSSING THE</text>
+                    <text x="555" y="306" text-anchor="start" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">THRESHOLD</text>
 
                     <!-- 4. Tests & Allies (lower right) -->
                     <circle cx="470" cy="470" r="5" fill="#FFFFFF" style="opacity:0; animation: dotAppear 0.3s ease forwards 1.9s;" />
@@ -1612,8 +1751,8 @@
 
                     <!-- 7. The Road Back (left, at midline) -->
                     <circle cx="60" cy="300" r="6" fill="#FF0A0A" style="opacity:0; animation: dotAppear 0.3s ease forwards 2.8s;" />
-                    <text x="60" y="270" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">THE ROAD</text>
-                    <text x="60" y="286" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">BACK</text>
+                    <text x="5" y="270" text-anchor="start" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">THE ROAD</text>
+                    <text x="5" y="286" text-anchor="start" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="14" letter-spacing="1">BACK</text>
 
                     <!-- 8. Transformation (top left) -->
                     <circle cx="130" cy="130" r="5" fill="#FFFFFF" style="opacity:0; animation: dotAppear 0.3s ease forwards 3.1s;" />
@@ -1622,10 +1761,8 @@
 
                     <!-- Center text -->
                     <text x="300" y="290" text-anchor="middle" fill="#FF0A0A" font-family="Bebas Neue, sans-serif" font-size="28" letter-spacing="3">YOUR</text>
-                    <text x="300" y="320" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="28" letter-spacing="3">JOURNEY</text>
+                    <text x="300" y="335" text-anchor="middle" fill="#FFFFFF" font-family="Bebas Neue, sans-serif" font-size="28" letter-spacing="3">JOURNEY</text>
 
-                    <!-- Directional arrow (clockwise indicator) -->
-                    <path d="M 415 85 L 425 75 L 420 95" fill="#FF0A0A" style="opacity:0; animation: dotAppear 0.3s ease forwards 1.2s;" />
                 </svg>
 
                 <style>
@@ -1662,7 +1799,7 @@
          ========================================== -->
     <section class="offer" id="offer">
         <div class="offer-header">
-            <div class="section-label" style="justify-content: center;">What $500 Buys</div>
+            <div class="section-label" style="justify-content: center;">Your Film, Start to Finish</div>
             <h2 class="display">Cinema. Not Content.</h2>
             <p>Every documentary includes everything below. No upsells. No hidden costs.</p>
         </div>
@@ -1744,19 +1881,16 @@
          ========================================== -->
     <section style="padding:50px 24px; background:var(--black); border-top:3px solid var(--dark-gray);">
         <div class="container" style="max-width:700px; text-align:center;">
-            <div class="section-label" style="justify-content:center;">The Math</div>
+            <div class="section-label" style="justify-content:center;">What You're Making</div>
             <h2 class="display" style="font-size:clamp(2rem,5vw,3.5rem); line-height:1; margin-bottom:24px;">
-                $500 For 5 Minutes Of <span style="color:var(--red);">Immortality</span>.
+                A Real Film About A <span style="color:var(--red);">Real Person</span>.
             </h2>
-            <p style="font-size:1.05rem; color:var(--text-light); line-height:1.7; margin-bottom:24px;">
-                Your great-grandchildren will watch this film dozens of times. Let's say 50 years from now,
-                <strong style="color:var(--white);">10 people watch it 10 times each. That's 100 viewings.
-                $500 &divide; 100 = $5 per viewing.</strong>
-            </p>
             <p style="font-size:1.05rem; color:var(--text-light); line-height:1.7; margin-bottom:32px;">
-                Now ask yourself: <strong style="color:var(--white);">What would you pay to watch a 5-minute documentary
-                about your great-grandmother?</strong> To hear her voice, see her face, understand what shaped her.
-                You'd probably pay $500 just for that. That's what you're creating. Not for you. <em>For them.</em>
+                This isn't a talking-head video or a glorified slideshow. It's a cinematic documentary &mdash;
+                shot on cinema cameras, professionally edited, with sound design and an original score.
+                <strong style="color:var(--white);">It's the kind of film people watch and feel something.</strong>
+                The kind that gets more valuable with every year that passes.
+                A story worth telling, told the way it deserves to be told.
             </p>
             <a href="#pricing" class="btn btn-outline">See Pricing</a>
         </div>
@@ -1768,7 +1902,7 @@
     <section class="pricing" id="pricing">
         <div class="pricing-header">
             <div class="section-label" style="justify-content: center;">Pricing</div>
-            <h2 class="display">What's Your Legacy Worth?</h2>
+            <h2 class="display">Two Ways To Tell Your Story</h2>
             <p>Pay half upfront. Half when your film is delivered. No surprises.</p>
         </div>
 
@@ -1799,22 +1933,24 @@
 
             <!-- TIER 2: THE FULL PACKAGE -->
             <div class="price-card featured">
-                <div class="price-badge">Best Value</div>
+                <div class="price-badge">Full Experience</div>
                 <div class="tier-name">Tier 02</div>
                 <div class="price"><span class="dollar-sign">$</span>1500</div>
                 <div class="price-split">Custom payment plan available</div>
                 <div class="tier-title display">The Full Package</div>
                 <ul class="price-features">
-                    <li>Everything in The Documentary</li>
-                    <li>Custom landing page with CTA</li>
+                    <li>5-minute cinematic documentary</li>
+                    <li>Up to 5 days of filming (20 hours)</li>
+                    <li>Story development &amp; narrative arc mapping</li>
+                    <li>Professional edit, color grade, sound design &amp; score</li>
+                    <li>Custom landing page built around your film</li>
                     <li>30-day AI-powered marketing campaign</li>
-                    <li>Social media cut-downs (3 clips)</li>
+                    <li>3 social media cut-downs</li>
                     <li>Thumbnail &amp; banner design</li>
-                    <li>SEO-optimized distribution strategy</li>
-                    <li>Analytics dashboard access</li>
-                    <li>Priority scheduling</li>
+                    <li>72-hour edit turnaround, unlimited revisions</li>
+                    <li>Raw files transfer</li>
                 </ul>
-                <a href="#booking" class="btn btn-red">Film My Story + Amplify It</a>
+                <a href="#booking" class="btn btn-red">Let's Tell Your Story</a>
             </div>
         </div>
     </section>
@@ -1825,13 +1961,13 @@
     <div class="guarantee">
         <div class="guarantee-inner">
             <div class="section-label" style="justify-content: center;">Our Promise</div>
-            <h3 class="display">The Zero-Risk Guarantee</h3>
+            <h3 class="display">You Don't Pay Until You're Proud</h3>
             <p style="margin-bottom:12px;">
-                <strong style="color:var(--white);">Love your film or get 100% of your money back PLUS all the raw footage for free.</strong>
-                No questions asked. No hoops. No awkward conversations. You keep everything. We're that confident.
+                <strong style="color:var(--white);">You pay half to book. The other half is due only when you love the final film.</strong>
+                We'll revise until it's right. If we can't make something you're proud of, you get your deposit back and keep the raw footage. Simple as that.
             </p>
             <p style="font-size:0.8rem; color:var(--text-gray); font-family:'JetBrains Mono',monospace; letter-spacing:0.05em;">
-                We've never had to issue a refund. But we will if you ask.
+                We take pride in every film we make. And we want you to feel the same way.
             </p>
         </div>
     </div>
@@ -1924,7 +2060,7 @@
                     <span class="icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Everything in The Documentary ($500 tier) plus: a custom landing page built around your film, a 30-day AI-powered marketing campaign, 3 social media clips, thumbnail and banner design, SEO distribution strategy, and an analytics dashboard. It's your documentary plus a complete amplification engine.</p>
+                    <p>The Full Package is the complete cinematic experience. You get up to 5 days of filming (20 hours) instead of 2, which means we can go deeper into your story &mdash; more locations, more moments, more time to capture who you really are. On top of the documentary itself, you get a custom landing page built around your film, a 30-day AI-powered marketing campaign, 3 social media cut-downs, and thumbnail and banner design. It's for people who want their story not just told, but shared with the world.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -1933,7 +2069,7 @@
                     <span class="icon">+</span>
                 </button>
                 <div class="faq-answer">
-                    <p>Each documentary requires 2 days of filming, 3-4 days of editing, revision rounds, and story development. We could crank out more, but quality would suffer. Three projects per month means every story gets the time and attention it deserves. We'd rather turn down work than compromise on quality.</p>
+                    <p>Each documentary requires 2 days of filming (or up to 5 for the Full Package), plus editing, revision rounds, and story development. We could take on more, but quality would suffer. Three projects per month means every story gets the time and attention it deserves. We'd rather turn down work than compromise on your film.</p>
                 </div>
             </div>
         </div>
@@ -2037,11 +2173,33 @@
          JAVASCRIPT
          ========================================== -->
     <script>
-        // ---- HERO VIDEO SWITCHER ----
+        // ---- HERO VIDEO PLAYER ----
+        function playHeroVideo() {
+            const thumb = document.getElementById('heroVideoThumb');
+            const embed = document.getElementById('heroVideoEmbed');
+            const videoId = thumb.dataset.video;
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=0&playsinline=1&color=white&cc_load_policy=0&autoplay=1';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+            iframe.title = 'Monomyth Motion Pictures';
+            iframe.style.border = '0';
+            thumb.remove();
+            embed.appendChild(iframe);
+        }
+
         function switchHeroVideo(btn) {
             const videoId = btn.dataset.video;
-            const iframe = document.getElementById('heroVideo');
-            iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?rel=0&modestbranding=1&iv_load_policy=3&fs=0&disablekb=0&playsinline=1&color=white&cc_load_policy=0';
+            const embed = document.getElementById('heroVideoEmbed');
+            // Reset to thumbnail mode
+            embed.innerHTML = '';
+            const thumb = document.createElement('div');
+            thumb.className = 'hero-video-thumb';
+            thumb.id = 'heroVideoThumb';
+            thumb.dataset.video = videoId;
+            thumb.style.backgroundImage = "url('https://img.youtube.com/vi/" + videoId + "/maxresdefault.jpg')";
+            thumb.onclick = playHeroVideo;
+            embed.appendChild(thumb);
             document.querySelectorAll('.hero-video-tab').forEach(t => t.classList.remove('active'));
             btn.classList.add('active');
         }

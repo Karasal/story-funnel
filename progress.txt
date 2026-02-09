@@ -1,64 +1,60 @@
 # MONOMYTH MOTION PICTURES - Story Funnel
 
-## Status: COMPLETE v3 - Production Ready
+## Status: COMPLETE v4 - Production Ready
+## Last Updated: 2026-02-09
 
-## File: C:\claude\story-funnel\index.html
+## File: C:\claude\story-funnel\index.html (2337 lines)
 ## Preview: npx serve C:\claude\story-funnel -p 3456 -s
 
 ## Company
 - **Name**: MONOMYTH MOTION PICTURES
 - **Service**: Cinematic 5-minute personal documentaries
+- **Location**: Calgary, Alberta
 - **Pricing**: $500 (Documentary) / $1,500 (Full Package with landing page + 30-day AI marketing)
 - **Payment**: 50/50 split — $250 upfront, $250 on delivery
-- **Filming**: 2 days, 4 hours each, on location
+- **Filming**: 2 days, 4 hours each, on location (5 days/20hrs for Full Package)
 - **Turnaround**: 72-hour edit, unlimited revisions
 - **Raw files**: Free transfer if client brings 2TB+ drive
 - **Brand philosophy**: The Monomyth / Hero's Journey — every life follows the same narrative arc
 
 ## Design System
-- **Aesthetic**: Dark cinematic neobrutalism — RED KOMODO-X meets indie film slate
-- **Colors**: Pure black bg (#000), white text, red accents (#FF0A0A)
+- **Aesthetic**: Dark cinematic neobrutalism — cinema camera meets indie film slate
+- **Colors**: Near-black bg (#0D0D0D) with subtle blue radial gradient, white text, red accents (#FF0A0A)
 - **Fonts**: Bebas Neue (display), Inter (body), JetBrains Mono (tech/labels)
-- **Effects**: Animated film grain, scanlines, scroll reveals, staggered grid animations
+- **Effects**: Animated film grain (grain.gif overlay), scanlines, scroll reveals
 - **Neobrutalism**: Hard offset shadows (4-8px, zero blur), 3px borders, translate hover/press physics
-- **Unique elements**: Clapperboard/slate UI, Hero's Journey circle diagram (SVG), film strip divider
+- **Unique elements**: Clapperboard/slate UI, Hero's Journey circle diagram (animated SVG), film strip divider
 
 ## Page Sections (in order)
-1. **Nav** — Fixed, blur backdrop, REC dot, "Our Work" link, "Book a Call" CTA
-2. **Hero** — Full viewport, "Your Life Is A Movie. Let's Shoot It.", $500 price, scarcity ("3 spots/month")
-3. **Video Showcase** — Two YouTube embeds (locked down: no YT branding, no related vids, no fullscreen escape)
-   - Video 1: https://www.youtube.com/watch?v=RLwo8clXyZM
-   - Video 2: https://www.youtube.com/watch?v=gxeU_tq7jH8
-4. **Film Strip** — Infinite scrolling frames ("Your Origin", "Your Struggle", etc.)
-5. **The Problem** — PAS copy: "Your Story Is Being Told Without You"
-6. **The Monomyth** — Hero's Journey explanation + animated SVG circle diagram + "We Map Your Story To This Arc"
-7. **Who This Is For** — 4 qualifying statements (founders, creatives, brand builders, legacy)
-8. **What You Get** — 4-card grid (Story Dev, 2 Days Filming, Edit, Unlimited Revisions)
-9. **The Process** — Clapperboard-styled "The Reel Story Method™" (4 steps)
-10. **Stats Bar** — 72hr turnaround, 8hrs filming, unlimited revisions, 50% on delivery
-11. **Pricing** — Two tiers side by side ($500 Doc / $1500 Full Package), value stack on $500 tier
-12. **Guarantee** — "You Don't Pay Until You're Proud"
-13. **Raw Files Note** — 2TB hard drive transfer info
-14. **FAQ** — 7 questions with accordion
-15. **Booking Form** — Lead capture (name, email, phone, package select, story textarea)
-16. **Footer** — "MONOMYTH MOTION PICTURES"
-17. **Sticky Mobile CTA** — Shows after hero scroll, hides at booking form
-
-## Research Completed (5 parallel agents)
-1. RED KOMODO-X camera website design patterns
-2. Neobrutalism web design (dark mode specific)
-3. High-converting sales funnels for creative services
-4. Best filmmaker/documentary portfolio sites
-5. CSS/animation techniques for cinematic web
-
-## Key Conversion Features Applied
-- Sticky mobile CTA (appears/hides smartly)
-- Honest scarcity: "ONLY 3 SPOTS PER MONTH"
-- Value stack: "$2,000+ value — yours for $500"
-- Action-specific CTA: "Book My Free Discovery Call"
-- Risk reversal: "No commitment" text
-- Named methodology: "The Reel Story Method™"
-- Pre-qualifying section: "This Is For You If"
+1. **Nav** — Fixed, blur backdrop, REC dot, "Our Method" link, "Film My Story" CTA
+2. **Hero** — Split layout: video tabs (left) + copy/pricing/CTA (right)
+   - Headline: "Your Life Story Deserves To Be A Film."
+   - Tag: "Now Booking For Calgary, Alberta"
+   - 3 videos with tab switcher (click-to-play thumbnails):
+     - Kaleb Brunning: https://www.youtube.com/watch?v=RLwo8clXyZM
+     - Peter Herbig: https://www.youtube.com/watch?v=gxeU_tq7jH8
+     - TICK (Short Film) BTS: https://www.youtube.com/watch?v=MJoULg_WjQE
+   - Price: $500 flat (strikethrough $2,500)
+   - Scarcity: "LIMITED TIME OFFER THROUGH FEBRUARY"
+   - Split-payment callout: $250 to book | $250 on delivery
+   - CTAs: "Film My Story" (primary) + "How It Works" (outline)
+3. **The Problem** — Positive angle: "Everyone Has A Story Worth Telling"
+   - Grandmother thought experiment (emotional hook)
+   - "Join The Movement" sub-section
+4. **Film Strip** — Infinite scrolling frames ("Your Origin", "Your Struggle", etc.) — hidden on mobile
+5. **The Monomyth** — Hero's Journey explanation + animated SVG circle diagram + "We Map Your Real Story To This Arc"
+6. **What You Get** — 4-card grid (Proof You Were Real, Your Space Your Story, Cinema-Grade Production, Forever Yours)
+7. **The Process** — Clapperboard-styled "The Reel Story Method™" (4 steps: Book The Call, Pre-Production, We Shoot, You Watch Your Film)
+8. **The Legacy Math** — "A Real Film About A Real Person" — emotional bridge to pricing
+9. **Pricing** — Two tiers side by side ($500 Documentary / $1500 Full Package), value stack on $500 tier
+10. **Guarantee** — "You Don't Pay Until You're Proud" — deposit-back promise
+11. **FAQ** — 10 questions with accordion (ordinary life, camera shy, payment, story discovery, equipment, turnaround, raw footage, location, full package details, 3 spots limit)
+12. **Booking Form** — Multi-step lead capture:
+    - Step 1: Email only ("Start My Story")
+    - Step 2: Full details (name, email pre-filled readonly, phone, package select, story textarea)
+    - Success: "REC" animation + "YOUR STORY STARTS NOW"
+13. **Footer** — "MONOMYTH MOTION PICTURES"
+14. **Sticky Mobile CTA** — Shows after hero scroll, hides at booking form
 
 ## Form Backend
 - Currently client-side only (shows success message with "REC" animation)
@@ -66,13 +62,33 @@
 - Needs Formspree form ID or similar endpoint
 
 ## Tech
-- Single HTML file, ~900 lines
-- Zero dependencies (except Google Fonts CDN)
+- Single HTML file, 2337 lines
+- Zero dependencies (except Google Fonts CDN + grain.gif)
 - YouTube embeds use youtube-nocookie.com with locked params
-- Mobile responsive, all breakpoints covered
-- IntersectionObserver for scroll reveals + sticky CTA logic
+- Click-to-play video thumbnails (no auto-loading iframes)
+- Mobile responsive, all breakpoints covered (960px, 768px, 600px, 480px)
+- IntersectionObserver for sticky CTA logic
 - Animated SVG Hero's Journey diagram with draw-on-scroll
-- Animated film grain (shifting position), scanlines overlay
+- Animated film grain (grain.gif overlay at 6% opacity), scanlines
+- Multi-step form with email-first capture
+
+## Key Conversion Features
+- Multi-step form (email micro-commitment first)
+- Limited time offer urgency: "THROUGH FEBRUARY"
+- Value stack: "$2,500" strikethrough → "$500"
+- Action-specific CTA: "Film My Story"
+- Risk reversal: deposit-back guarantee
+- Named methodology: "The Reel Story Method™"
+- Emotional hook: grandmother thought experiment
+- Positive framing: "Everyone Has A Story Worth Telling" (not fear-based)
+- Split-payment transparency in hero
+- Click-to-play videos (no iframe weight on load)
+
+## Files
+- `index.html` — The full page (2337 lines)
+- `grain.gif` — Film grain overlay texture (76KB)
+- `progress.txt` — This file
+- `handoff/` — Context compaction checkpoints
 
 ## To Deploy
 1. `npx vercel` from C:\claude\story-funnel
@@ -88,4 +104,3 @@
 - Analytics: add simple tracking (Plausible or Umami for privacy)
 - A/B test headline variations
 - Add behind-the-scenes gallery section
-- Create social media cut-down versions of the page content
