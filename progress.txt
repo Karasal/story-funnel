@@ -1,0 +1,91 @@
+# MONOMYTH MOTION PICTURES - Story Funnel
+
+## Status: COMPLETE v3 - Production Ready
+
+## File: C:\claude\story-funnel\index.html
+## Preview: npx serve C:\claude\story-funnel -p 3456 -s
+
+## Company
+- **Name**: MONOMYTH MOTION PICTURES
+- **Service**: Cinematic 5-minute personal documentaries
+- **Pricing**: $500 (Documentary) / $1,500 (Full Package with landing page + 30-day AI marketing)
+- **Payment**: 50/50 split — $250 upfront, $250 on delivery
+- **Filming**: 2 days, 4 hours each, on location
+- **Turnaround**: 72-hour edit, unlimited revisions
+- **Raw files**: Free transfer if client brings 2TB+ drive
+- **Brand philosophy**: The Monomyth / Hero's Journey — every life follows the same narrative arc
+
+## Design System
+- **Aesthetic**: Dark cinematic neobrutalism — RED KOMODO-X meets indie film slate
+- **Colors**: Pure black bg (#000), white text, red accents (#FF0A0A)
+- **Fonts**: Bebas Neue (display), Inter (body), JetBrains Mono (tech/labels)
+- **Effects**: Animated film grain, scanlines, scroll reveals, staggered grid animations
+- **Neobrutalism**: Hard offset shadows (4-8px, zero blur), 3px borders, translate hover/press physics
+- **Unique elements**: Clapperboard/slate UI, Hero's Journey circle diagram (SVG), film strip divider
+
+## Page Sections (in order)
+1. **Nav** — Fixed, blur backdrop, REC dot, "Our Work" link, "Book a Call" CTA
+2. **Hero** — Full viewport, "Your Life Is A Movie. Let's Shoot It.", $500 price, scarcity ("3 spots/month")
+3. **Video Showcase** — Two YouTube embeds (locked down: no YT branding, no related vids, no fullscreen escape)
+   - Video 1: https://www.youtube.com/watch?v=RLwo8clXyZM
+   - Video 2: https://www.youtube.com/watch?v=gxeU_tq7jH8
+4. **Film Strip** — Infinite scrolling frames ("Your Origin", "Your Struggle", etc.)
+5. **The Problem** — PAS copy: "Your Story Is Being Told Without You"
+6. **The Monomyth** — Hero's Journey explanation + animated SVG circle diagram + "We Map Your Story To This Arc"
+7. **Who This Is For** — 4 qualifying statements (founders, creatives, brand builders, legacy)
+8. **What You Get** — 4-card grid (Story Dev, 2 Days Filming, Edit, Unlimited Revisions)
+9. **The Process** — Clapperboard-styled "The Reel Story Method™" (4 steps)
+10. **Stats Bar** — 72hr turnaround, 8hrs filming, unlimited revisions, 50% on delivery
+11. **Pricing** — Two tiers side by side ($500 Doc / $1500 Full Package), value stack on $500 tier
+12. **Guarantee** — "You Don't Pay Until You're Proud"
+13. **Raw Files Note** — 2TB hard drive transfer info
+14. **FAQ** — 7 questions with accordion
+15. **Booking Form** — Lead capture (name, email, phone, package select, story textarea)
+16. **Footer** — "MONOMYTH MOTION PICTURES"
+17. **Sticky Mobile CTA** — Shows after hero scroll, hides at booking form
+
+## Research Completed (5 parallel agents)
+1. RED KOMODO-X camera website design patterns
+2. Neobrutalism web design (dark mode specific)
+3. High-converting sales funnels for creative services
+4. Best filmmaker/documentary portfolio sites
+5. CSS/animation techniques for cinematic web
+
+## Key Conversion Features Applied
+- Sticky mobile CTA (appears/hides smartly)
+- Honest scarcity: "ONLY 3 SPOTS PER MONTH"
+- Value stack: "$2,000+ value — yours for $500"
+- Action-specific CTA: "Book My Free Discovery Call"
+- Risk reversal: "No commitment" text
+- Named methodology: "The Reel Story Method™"
+- Pre-qualifying section: "This Is For You If"
+
+## Form Backend
+- Currently client-side only (shows success message with "REC" animation)
+- Code comments explain how to connect: Formspree, Zapier, EmailJS, or Supabase
+- Needs Formspree form ID or similar endpoint
+
+## Tech
+- Single HTML file, ~900 lines
+- Zero dependencies (except Google Fonts CDN)
+- YouTube embeds use youtube-nocookie.com with locked params
+- Mobile responsive, all breakpoints covered
+- IntersectionObserver for scroll reveals + sticky CTA logic
+- Animated SVG Hero's Journey diagram with draw-on-scroll
+- Animated film grain (shifting position), scanlines overlay
+
+## To Deploy
+1. `npx vercel` from C:\claude\story-funnel
+2. Or push to GitHub → Vercel/Netlify auto-deploy
+3. Or drag to https://app.netlify.com/drop
+
+## Potential Next Steps
+- Add real testimonials when available
+- Add a showreel/sizzle video as hero background
+- Connect form to Formspree or Supabase
+- Add Calendly/Cal.com inline embed for direct scheduling
+- SEO: Open Graph tags, structured data, favicon
+- Analytics: add simple tracking (Plausible or Umami for privacy)
+- A/B test headline variations
+- Add behind-the-scenes gallery section
+- Create social media cut-down versions of the page content
